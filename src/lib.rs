@@ -28,3 +28,26 @@ impl PartialEq for Side {
         }
     }
 }
+
+impl Side {
+    /// returns true if the Side variant is an a => b swap
+    pub fn a_to_b(&self) -> bool {
+        self.eq(&Side::Ask)
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use super::*;
+    #[test]
+    fn test_side() {
+        assert!(Side::Ask.eq(&Side::Ask));
+        assert!(Side::Bid.eq(&Side::Bid));
+        assert!(Side::Ask.ne(&Side::Bid));
+        assert!(Side::Bid.ne(&Side::Ask));
+        assert!(!Side::Ask.eq(&Side::Bid));
+        assert!(!Side::Bid.eq(&Side::Ask));
+        assert!(!Side::Bid.a_to_b());
+        assert!(Side::Ask.a_to_b());
+    }
+}
