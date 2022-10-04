@@ -1,6 +1,6 @@
 [package]
 name = "jupiter-cpi-tulip"
-version = "3.0.3"
+version = "3.0.4"
 edition = "2021"
 description = "Anchor CPI client for the Jupiter program."
 authors = ["Siong Ong <siong@raccoons.dev>"]
@@ -16,7 +16,7 @@ no-log-ix-name = []
 cpi = ["no-entrypoint"]
 
 [dependencies]
-anchor-gen-tulip = "0.4.0"
+anchor-gen-tulip = "0.4.1"
 anchor-lang = ">=0.22"
 [profile.release]
 opt-level = "s"
